@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto curso Polo</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
     <header>
         <!-- Uso el tag div para agrupa elementos sin un sentido semantico -->
-        <div>
-            <img src="" alt="">
+        <div id="top-nav" class="bb-black">
+            <img src="img/icon.png" alt="">
             <nav>
                 <ul>
                     <li>
@@ -23,14 +24,14 @@
             </nav>
         </div>
 
-        <div>
-            <h1>Título principal de la página</h1>
+        <div id="presentacion">
+            <h1 class="bb-black">Adopción de gatitos</h1>
         </div>
     </header>
 
     <main>
-        <section>
-            <h2>Subtitulo sección</h2>
+        <section id="seccion1">
+            <h2 class="bb-black">Subtitulo sección</h2>
             <img src="https://placekitten.com/150/150" alt="">
             <img src="https://placekitten.com/150/150" alt="">
             <img src="https://placekitten.com/150/150" alt="">
@@ -77,8 +78,12 @@
             <h2>Menu</h2>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>Acerca de</li>
+                    <li>
+                        <span>Home</span>
+                    </li>
+                    <li>
+                        <a href="paginas/acerca.html">Acerca de</a>
+                    </li>
                 </ul>
             </nav>
         </div>
