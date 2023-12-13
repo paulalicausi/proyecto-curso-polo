@@ -100,3 +100,119 @@ console.log(titulo.innerText);
 function cambiarColor(color) {
     titulo.style.color = color;
 }
+
+/**
+ * Clase 7
+ */
+
+function colorFrutas() {
+    
+    let fruta = window.prompt('Ingresa una fruta');
+
+    switch (fruta) {
+
+        case 'manzana':
+            color = 'red';
+        break;
+
+        case 'kiwi':
+            color = 'green';    
+        break;
+
+        case 'banana':
+            color = 'yellow';    
+        break;
+
+        case 'durazno':
+            color = 'orange';    
+        break;
+
+        case 'arandanos':
+            color = 'purple';    
+        break;
+    
+        default:
+            color = '';
+        break;
+    }
+
+    let frutasContainer = document.getElementById('frutas');
+    frutasContainer.style.background = color;
+}
+
+/**
+ * Resolución ejercicios clase 7
+ */
+
+//1 
+function crearListaSuper() {
+    let listaSuper = [
+        'Pan',
+        'Harina',
+        'Manteca',
+        'Jabón',
+        'Shampoo',
+        'Frutas'
+    ];
+    
+    let nuevoArticulo = window.prompt('Ingresa un nuevo artículo para la lista:');
+    
+    if(listaSuper.includes(nuevoArticulo)) {
+        alert('Articulo ya ingresado en la lista!');
+    } else {
+        listaSuper.push(nuevoArticulo);
+        alert('Lista super:' + listaSuper)
+    }
+}
+
+//2 
+function mostrarDia() {
+    let hoy = new Date();
+    hoy = hoy.getDay();
+
+    switch (hoy) {
+        case 0:
+            dia = 'Domingo';    
+        break;
+        case 1:
+            dia = 'Lunes';    
+        break;
+        case 2:
+            dia = 'Martes';    
+        break;
+        case 3:
+            dia = 'Miércoles';    
+        break;
+        case 4:
+            dia = 'Jueves';    
+        break;
+        case 5:
+            dia = 'Viernes';    
+        break;
+        default:
+            dia = 'Sabado';
+        break;
+    }
+
+    document.write('El día de hoy es: ' + dia);
+}
+
+//3
+function medirPalabra() {
+    let palabra = window.prompt('Ingresa una palabra');
+
+    if(palabra.length >= 8) {
+        document.write('La palabra tiene igual o más de 8 caracteres');
+    } else {
+        document.write('La palabra es muy corta');
+    }
+}
+
+//4 
+function esCoordenadaRefugio(num) {
+
+    if(num > 0 && (num % 2 === 0 || num % 3 === 0) && num != 5 && num != 15 ) {
+        alert('En esa coordenada hay un refugio!');
+    }
+    
+}
