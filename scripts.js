@@ -10,7 +10,7 @@ let planetas = [
     "Neptuno"
 ];
 
-console.log("Total de planetas: ", planetas.length);
+//console.log("Total de planetas: ", planetas.length);
 
 let planeta = {
     nombre: "Tierra",
@@ -24,20 +24,20 @@ let planeta = {
         }
     ]
 };
-console.log(planeta.satelites[0].visitasHumanas);
+//console.log(planeta.satelites[0].visitasHumanas);
 
 planeta.satelites[0].visitasHumanas = 2;
 
-console.log(planeta.satelites[0].visitasHumanas);
-console.log(typeof planeta.nombre); //Sirve para saber qué tipo de dato es una variable
+//console.log(planeta.satelites[0].visitasHumanas);
+//console.log(typeof planeta.nombre); //Sirve para saber qué tipo de dato es una variable
 
 const hogar = "Tierra";
-console.log(hogar);
+//console.log(hogar);
 //hogar = "Mercurio"; ERROR: no se puede asignar un nuevo valor a una constante. 
 
 planeta.oceanos = 5;
 
-console.log(planeta);
+//console.log(planeta);
 
 /**
  * Elementos del DOM
@@ -48,7 +48,7 @@ let flexContainer = document.getElementsByClassName('contenedor-flex'); //Devuel
 document.getElementById('top-nav'); //Devuelve el primer elemento que coincida con el ID especificado
 
 let flexItems = flexContainer[0].getElementsByClassName('flex-item');
-console.log(flexItems);
+//console.log(flexItems);
 
 /**
  * Funciones
@@ -60,18 +60,19 @@ function saludar() {
 
 function sumar(num) {
     let num2 = 3;
-    console.log(num2); //Puedo acceder a num2 porque su scope es local
+    //console.log(num2); Puedo acceder a num2 porque su scope es local
     return num + num2;
 }
 
 // console.log(num2); Acá no funciona num2 porque su scope es dentro de la función sumar
 
 let resultado = sumar(6);
-console.log('El resultado es: ', resultado);
+//console.log('El resultado es: ', resultado);
 
 /**
  * Eventos
  */
+
 let btn = document.getElementById('btn-saludo');
 btn.addEventListener(
     'click',  //Lista de eventos en https://developer.mozilla.org/es/docs/Web/Events
@@ -90,11 +91,11 @@ function conocerLargoNombre(nombre) {
 }
 
 let largoNombre = conocerLargoNombre('Carolina');
-console.log('El nombre tiene ' + largoNombre + ' caracteres');
+//console.log('El nombre tiene ' + largoNombre + ' caracteres');
 
 //2
 let titulo = document.querySelector('h1');
-console.log(titulo.innerText);
+//console.log(titulo.innerText);
 
 //3
 function cambiarColor(color) {
@@ -216,3 +217,97 @@ function esCoordenadaRefugio(num) {
     }
     
 }
+
+/**
+ * Clase 8
+ */
+
+let btnMobile = document.getElementById('btn-menu-mobile');
+let mainNav = document.getElementById('top-nav');
+let nav = mainNav.getElementsByTagName('nav')[0];
+
+btnMobile.addEventListener('click', function () {
+    nav.classList.toggle('mobile-oculto');
+    btnMobile.getElementsByTagName('span')[0].classList.toggle('mobile-oculto');
+    btnMobile.getElementsByTagName('img')[0].classList.toggle('mobile-oculto');
+});
+
+
+
+let divs = document.getElementsByTagName('div');
+
+for (let i = 0; i < divs.length; i++) {
+   // console.log(divs[i].style);
+}
+
+let objetos = ["Varita", "Libro", "Lechuza", "Caldero"];
+
+let palabrasLargas = objetos.filter(obj => {
+    return obj.length > 5;
+});
+
+/**
+ * Resolución ejercicios clase 8
+ */
+
+//1
+let pasos = 100;
+/*
+while (pasos > 0) {
+    if (pasos === 1) {
+        document.write('Solo falta ' + pasos + ' por caminar');
+    } else {
+        document.write('Solo faltan ' + pasos + ' por caminar');
+    }
+}
+*/
+//2 
+
+let numerosMultiplicar = [
+    [2, 87], //Multiplicar estos numeros
+    [65, 45],
+    [456, 1002]
+]; //Sumar el total: 2*8 + 65*45 + 459*1002
+
+function sumaTotal(numeros) {
+    let resultado = 0;
+
+    for (let i = 0; i < numeros.length; i++) {
+        let num1 = numeros[i][0];
+        let num2 = numeros[i][1];
+        resultado += num1 * num2;
+    }
+
+    return resultado;
+}
+
+console.log(sumaTotal(numerosMultiplicar));
+
+let nuevoArray = numerosMultiplicar[1].map(num => {
+    if(num % 2 === 0) {
+        return num + ' es par'; 
+    } else {
+        return num + ' es impar';
+    }
+});
+
+console.log(nuevoArray);
+
+//3
+
+let nombres = [
+    'Ana',
+    'Maria',
+    'Gustavo',
+    'Mario',
+    'Marcela',
+    'Isis'
+];
+
+let nombreCortos = nombres.filter(nombre => {
+    return nombre.length < 5;
+});
+
+console.log(nombreCortos);
+
+

@@ -46,6 +46,46 @@ body {
     color: pink;
 }
 
+#top-nav #btn-menu-mobile {
+    background-color: transparent;
+    border: 0;
+    max-width: 70px;
+}
+
+#top-nav #btn-menu-mobile img {
+    width: 100%;
+}
+
+#top-nav #btn-menu-mobile span {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+
+@media (min-width: 1025px) {
+    #top-nav #btn-menu-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .mobile-oculto {
+        display: none;
+    }
+
+    #top-nav nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: coral;
+        width: 100%;
+        text-align: right;
+        padding-right: 20px;
+    }
+}
+
 /* Dos ejemplos iguales: */
 #top-nav li + li a {
     color: chartreuse;
