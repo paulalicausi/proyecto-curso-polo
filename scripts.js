@@ -311,3 +311,28 @@ let nombreCortos = nombres.filter(nombre => {
 console.log(nombreCortos);
 
 
+/**
+ * Clase 9
+ */
+
+//Petición asincrónica
+fetch('https://swapi.dev/api/people')
+    .then(response => {
+        //Una vez que llega la respuesta, los procesamos en formato JSON
+        return response.json();
+    })
+    .then(json => {
+        //Procesamos el JSON para mostrarlos en nuestro HTML
+        let personajes = json.results;
+        let contenedorPersonajes = document.getElementById('personajes');
+        let html = '<h2>Personajes Star Wars</h2>';
+
+        for (let i = 0; i < personajes.length; i++) {
+            html += '<h3>Nombre: ' + personajes[i].name + '</h3>';  
+            html += '<p>Año de nacimiento: ' + personajes[i].birth_year + '</p>';
+            html += '<hr>';   
+        }
+
+        //let html = 'Hola ' + personajes[0].name;
+        contenedorPersonajes.innerHTML = html;
+    });
