@@ -102,12 +102,13 @@
 
     <footer>
         <div>
-            <form action="">
+            <form id="form" action="">
                 <h2>Suscripción al newsletter</h2>
                 <label for="mail">E-mail:</label>
-                <input type="email" name="mail">
+                <input required type="email" name="mail">
+                <div class="error"></div>
                 <br>
-                <input type="checkbox" name="terminos" id="">
+                <input checked type="checkbox" name="terminos" id="">
                 <label for="terminos">Acepto recibir noticias</label>
                 <button type="submit">Enviar</button>
             </form>
@@ -120,7 +121,7 @@
                         <span>Home</span>
                     </li>
                     <li>
-                        <a href="paginas/acerca.html">Acerca de</a>
+                        <a target="_blank" href="paginas/acerca.html">Acerca de</a>
                     </li>
                 </ul>
             </nav>

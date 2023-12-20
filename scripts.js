@@ -316,10 +316,10 @@ console.log(nombreCortos);
  */
 
 //Petición asincrónica
-fetch('https://swapi.dev/api/people')
+fetch('https://swapi.dev/api/people') //GET, petición por defecto
     .then(response => {
         //Una vez que llega la respuesta, los procesamos en formato JSON
-        return response.json();
+        response.json();
     })
     .then(json => {
         //Procesamos el JSON para mostrarlos en nuestro HTML
@@ -336,3 +336,15 @@ fetch('https://swapi.dev/api/people')
         //let html = 'Hola ' + personajes[0].name;
         contenedorPersonajes.innerHTML = html;
     });
+
+
+/**
+ * Validación formularios
+ */
+let form = document.getElementById('form');
+form.addEventListener('submit', function(e) {
+   if(form.getElementsByTagName('input')[0].value == '') {
+        e.preventDefault();
+        form.getElementsByClassName('error')[0].innerHTML = 'Debes completar este campo';
+   } 
+});
