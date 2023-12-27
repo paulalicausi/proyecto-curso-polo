@@ -259,6 +259,7 @@ while (pasos > 0) {
     } else {
         document.write('Solo faltan ' + pasos + ' por caminar');
     }
+    pasos--;
 }
 */
 //2 
